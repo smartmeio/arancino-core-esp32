@@ -1,16 +1,18 @@
 {
-  "name": "framework-arduinoespressif32",
+  "name": "framework-arduinoespressif32-arancino",
   "version": "2.0.5",
-  "description": "Arduino Wiring-based Framework for the Espressif ESP32, ESP32-S and ESP32-C series of SoCs",
+  "description": "Arduino Wiring-based Framework for Espressif ESP32 microcontrollers",
   "keywords": [
     "framework",
     "arduino",
+		"arancino",
     "espressif",
     "esp32"
   ],
-  "license": "LGPL-2.1-or-later",
+  "homepage": "https://smartme.io/",
+	"license": "LGPL-2.1-or-later",
   "repository": {
     "type": "git",
-    "url": "https://github.com/espressif/arduino-esp32"
+    "url": "https://github.com/smartmeio/arancino-core-esp32"
   }
 }
