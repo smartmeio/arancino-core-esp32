@@ -23,6 +23,52 @@ menu.EraseFlash=Erase All Flash Before Sketch Upload
 ### DO NOT PUT BOARDS ABOVE THE OFFICIAL ESPRESSIF BOARDS! ###
 ##############################################################
 
+dfr_adapter.name=Dfr Adapter
+
+dfr_adapter.upload.tool=esptool_py
+dfr_adapter.upload.maximum_size=1310720
+dfr_adapter.upload.maximum_data_size=327680
+dfr_adapter.upload.flags=
+dfr_adapter.upload.extra_flags=
+
+dfr_adapter.serial.disableDTR=true
+dfr_adapter.serial.disableRTS=true
+
+dfr_adapter.build.tarch=xtensa
+dfr_adapter.build.bootloader_addr=0x1000
+dfr_adapter.build.target=esp32
+dfr_adapter.build.mcu=esp32
+dfr_adapter.build.core=esp32
+dfr_adapter.build.variant=dfr_adapter
+dfr_adapter.build.board=ESP32_DEV
+
+dfr_adapter.build.f_cpu=240000000L
+dfr_adapter.build.flash_mode=dio
+dfr_adapter.build.flash_size=4MB
+dfr_adapter.build.boot=dio
+dfr_adapter.build.partitions=default
+dfr_adapter.build.defines=
+
+dfr_adapter.menu.FlashFreq.80=80MHz
+dfr_adapter.menu.FlashFreq.80.build.flash_freq=80m
+dfr_adapter.menu.FlashFreq.40=40MHz
+dfr_adapter.menu.FlashFreq.40.build.flash_freq=40m
+
+dfr_adapter.menu.UploadSpeed.921600=921600
+dfr_adapter.menu.UploadSpeed.921600.upload.speed=921600
+dfr_adapter.menu.UploadSpeed.115200=115200
+dfr_adapter.menu.UploadSpeed.115200.upload.speed=115200
+dfr_adapter.menu.UploadSpeed.256000.windows=256000
+dfr_adapter.menu.UploadSpeed.256000.upload.speed=256000
+dfr_adapter.menu.UploadSpeed.230400.windows.upload.speed=256000
+dfr_adapter.menu.UploadSpeed.230400=230400
+dfr_adapter.menu.UploadSpeed.230400.upload.speed=230400
+dfr_adapter.menu.UploadSpeed.460800.linux=460800
+dfr_adapter.menu.UploadSpeed.460800.macosx=460800
+dfr_adapter.menu.UploadSpeed.460800.upload.speed=460800
+dfr_adapter.menu.UploadSpeed.512000.windows=512000
+dfr_adapter.menu.UploadSpeed.512000.upload.speed=512000
+
 esp32s3.name=ESP32S3 Dev Module
 esp32s3.vid.0=0x303a
 esp32s3.pid.0=0x1001
