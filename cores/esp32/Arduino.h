@@ -199,5 +199,14 @@ long random(long);
 #define _max(a,b) ((a)>(b)?(a):(b))
 
 #include "pins_arduino.h"
+// Allows Arancino Lib to read this value and pass it to Arancino Module
+// This value is modified in a CI/CD environment when a new tag is created
+#ifndef ARANCINO_CORE_VERSION
+#define ARANCINO_CORE_VERSION "0.0.0"
+#endif
+
+#ifndef MCU_FAMILY
+#define MCU_FAMILY "ESP32"
+#endif
 
 #endif /* _ESP32_CORE_ARDUINO_H_ */
