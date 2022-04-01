@@ -112,15 +112,17 @@ package_release:
         # tar files and move temp folder back
         - >
           tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* \
-            --exclude=ArduinoCore-API --exclude=package --exclude=doc \
-            --exclude=.travis.yml -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
+            --exclude=doc \
+            --exclude=.travis.yml \
+            -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
 
         # pio packaging
         - cp -r $CI_PROJECT_NAME framework-arduinoespressif32-arancino
         - >
           tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* \
-            --exclude=ArduinoCore-API --exclude=package --exclude=doc \
-            --exclude=.travis.yml -cvjf $PKG_NAME_PIO.tar.bz2 framework-arduinoespressif32-arancino
+            --exclude=doc \
+            --exclude=.travis.yml \
+            -cvjf $PKG_NAME_PIO.tar.bz2 framework-arduinoespressif32-arancino
 
         # move tar into temp folder
         - cd $CI_PROJECT_NAME
