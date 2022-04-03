@@ -28,7 +28,7 @@
 #define USB_PID 0x0002
 #endif
 #ifndef USB_MANUFACTURER
-#define USB_MANUFACTURER "Espressif Systems"
+#define USB_MANUFACTURER "SmartMe.IO"
 #endif
 #ifndef USB_PRODUCT
 #define USB_PRODUCT ARDUINO_BOARD
