@@ -31,8 +31,9 @@ from SCons.Script import DefaultEnvironment
 env = DefaultEnvironment()
 platform = env.PioPlatform()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoespressif32")
+FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoespressif32-arancino")
 assert isdir(FRAMEWORK_DIR)
+BUILD_CORE = "esp32"
 
 env.Append(
     ASFLAGS=[
@@ -275,7 +276,7 @@ env.Append(
         join(FRAMEWORK_DIR, "tools", "sdk", "esp32c3", "include", "esp-face", "include", "detect"),
         join(FRAMEWORK_DIR, "tools", "sdk", "esp32c3", "include", "esp-face", "include", "model_zoo"),
         join(FRAMEWORK_DIR, "tools", "sdk", "esp32c3", "include", "fb_gfx", "include"),
-        join(FRAMEWORK_DIR, "cores", env.BoardConfig().get("build.core"))
+        join(FRAMEWORK_DIR, "cores", BUILD_CORE)
     ],
 
     LIBPATH=[
@@ -342,7 +343,7 @@ envsafe = env.Clone()
 
 libs.append(envsafe.BuildLibrary(
     join("$BUILD_DIR", "FrameworkArduino"),
-    join(FRAMEWORK_DIR, "cores", env.BoardConfig().get("build.core"))
+    join(FRAMEWORK_DIR, "cores", BUILD_CORE)
 ))
 
 env.Prepend(LIBS=libs)
