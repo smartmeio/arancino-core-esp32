@@ -36,9 +36,10 @@ partitions_name = board_config.get(
     "build.partitions", board_config.get("build.arduino.partitions", "")
 )
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoespressif32")
+FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoespressif32-arancino")
 assert isdir(FRAMEWORK_DIR)
 
+BUILD_CORE = "esp32"
 
 #
 # Helpers
@@ -173,7 +174,7 @@ SConscript(
     join(
         DefaultEnvironment()
         .PioPlatform()
-        .get_package_dir("framework-arduinoespressif32"),
+        .get_package_dir("framework-arduinoespressif32-arancino"),
         "tools",
         "platformio-build-%s.py" % build_mcu,
     )
