@@ -30,7 +30,7 @@ from SCons.Script import DefaultEnvironment
 
 env = DefaultEnvironment()
 
-FRAMEWORK_DIR = env.PioPlatform().get_package_dir("framework-arduinoespressif32")
+FRAMEWORK_DIR = env.PioPlatform().get_package_dir("framework-arduinoespressif32-arancino")
 
 env.Append(
     ASFLAGS=[
