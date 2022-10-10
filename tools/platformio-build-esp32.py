@@ -31,7 +31,6 @@ from SCons.Script import DefaultEnvironment
 env = DefaultEnvironment()
 
 FRAMEWORK_DIR = env.PioPlatform().get_package_dir("framework-arduinoespressif32-arancino")
-BUILD_CORE = "esp32"
 
 env.Append(
     ASFLAGS=[
@@ -305,7 +304,7 @@ env.Append(
         join(FRAMEWORK_DIR, "tools", "sdk", "esp32", "include", "esp32-camera", "conversions", "include"),
         join(FRAMEWORK_DIR, "tools", "sdk", "esp32", "include", "fb_gfx", "include"),
         join(FRAMEWORK_DIR, "tools", "sdk", "esp32", env.BoardConfig().get("build.arduino.memory_type", (env.BoardConfig().get("build.flash_mode", "dio") + "_qspi")), "include"),
-        join(FRAMEWORK_DIR, "cores", BUILD_CORE)
+        join(FRAMEWORK_DIR, "cores", "esp32")
     ],
 
     LIBPATH=[
