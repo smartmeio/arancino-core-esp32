@@ -39,8 +39,6 @@ partitions_name = board_config.get(
 FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoespressif32-arancino")
 assert isdir(FRAMEWORK_DIR)
 
-BUILD_CORE = "esp32"
-
 #
 # Helpers
 #
