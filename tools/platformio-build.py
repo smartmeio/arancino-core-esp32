@@ -201,7 +201,7 @@ if "build.variant" in board_config:
 libs.append(
     env.BuildLibrary(
         join("$BUILD_DIR", "FrameworkArduino"),
-        join(FRAMEWORK_DIR, "cores", board_config.get("build.core")),
+        join(FRAMEWORK_DIR, "cores", "esp32"),
     )
 )
 
