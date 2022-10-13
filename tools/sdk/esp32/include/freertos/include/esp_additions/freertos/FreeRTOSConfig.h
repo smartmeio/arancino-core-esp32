@@ -194,7 +194,8 @@
 //We define the heap to span all of the non-statically-allocated shared RAM. ToDo: Make sure there
 //is some space left for the app and main cpu when running outside of a thread.
 #define configAPPLICATION_ALLOCATED_HEAP                1
-#define configTOTAL_HEAP_SIZE                           (&_heap_end - &_heap_start)//( ( size_t ) (64 * 1024) )
+//#define configTOTAL_HEAP_SIZE                           (&_heap_end - &_heap_start)//( ( size_t ) (64 * 1024) )
+#define configTOTAL_HEAP_SIZE                           ( ( size_t ) (64 * 1024) )
 
 #define configMAX_TASK_NAME_LEN                         ( CONFIG_FREERTOS_MAX_TASK_NAME_LEN )
 
