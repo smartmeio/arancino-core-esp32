@@ -18,6 +18,7 @@ menu.LoopCore=Arduino Runs On
 menu.EventsCore=Events Run On
 menu.MemoryType=Memory Type
 menu.EraseFlash=Erase All Flash Before Sketch Upload
+menu.freertos=Use FreeRTOS
 
 ##############################################################
 ### DO NOT PUT BOARDS ABOVE THE OFFICIAL ESPRESSIF BOARDS! ###
@@ -92,3 +93,7 @@ dfr_adapter.menu.EraseFlash.none=Disabled
 dfr_adapter.menu.EraseFlash.none.upload.erase_cmd=
 dfr_adapter.menu.EraseFlash.all=Enabled
 dfr_adapter.menu.EraseFlash.all.upload.erase_cmd=-e
+
+# FreeRTOS Menu
+dfr_adapter.menu.freertos.yes=Yes
+dfr_adapter.menu.freertos.yes.build.arancino_extra_flags=-DUSEFREERTOS
