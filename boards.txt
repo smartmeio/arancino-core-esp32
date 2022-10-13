@@ -25,7 +25,13 @@ menu.EraseFlash=Erase All Flash Before Sketch Upload
 
 dfr_adapter.name=Dfr Adapter
 
+dfr_adapter.bootloader.tool=esptool_py
+dfr_adapter.bootloader.tool.default=esptool_py
+
 dfr_adapter.upload.tool=esptool_py
+dfr_adapter.upload.tool.default=esptool_py
+dfr_adapter.upload.tool.network=esp_ota
+
 dfr_adapter.upload.maximum_size=1310720
 dfr_adapter.upload.maximum_data_size=327680
 dfr_adapter.upload.flags=
@@ -69,3 +75,20 @@ dfr_adapter.menu.UploadSpeed.460800.upload.speed=460800
 dfr_adapter.menu.UploadSpeed.512000.windows=512000
 dfr_adapter.menu.UploadSpeed.512000.upload.speed=512000
 
+dfr_adapter.menu.DebugLevel.none=None
+dfr_adapter.menu.DebugLevel.none.build.code_debug=0
+dfr_adapter.menu.DebugLevel.error=Error
+dfr_adapter.menu.DebugLevel.error.build.code_debug=1
+dfr_adapter.menu.DebugLevel.warn=Warn
+dfr_adapter.menu.DebugLevel.warn.build.code_debug=2
+dfr_adapter.menu.DebugLevel.info=Info
+dfr_adapter.menu.DebugLevel.info.build.code_debug=3
+dfr_adapter.menu.DebugLevel.debug=Debug
+dfr_adapter.menu.DebugLevel.debug.build.code_debug=4
+dfr_adapter.menu.DebugLevel.verbose=Verbose
+dfr_adapter.menu.DebugLevel.verbose.build.code_debug=5
+
+dfr_adapter.menu.EraseFlash.none=Disabled
+dfr_adapter.menu.EraseFlash.none.upload.erase_cmd=
+dfr_adapter.menu.EraseFlash.all=Enabled
+dfr_adapter.menu.EraseFlash.all.upload.erase_cmd=-e
