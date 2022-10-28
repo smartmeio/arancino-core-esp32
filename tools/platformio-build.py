@@ -39,8 +39,6 @@ partitions_name = board_config.get(
 FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoespressif32-arancino")
 assert isdir(FRAMEWORK_DIR)
 
-BUILD_CORE = "esp32"
-
 #
 # Helpers
 #
@@ -201,7 +199,7 @@ if "build.variant" in board_config:
 libs.append(
     env.BuildLibrary(
         join("$BUILD_DIR", "FrameworkArduino"),
-        join(FRAMEWORK_DIR, "cores", board_config.get("build.core")),
+        join(FRAMEWORK_DIR, "cores", "esp32"),
     )
 )
 
