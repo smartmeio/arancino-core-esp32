@@ -20,6 +20,7 @@ start:
         GIT_STRATEGY: none
 
     script:
+        - rm -rf tmp/
         - mkdir -p tmp
         - echo `date +%Y-%m-%d` > tmp/date.txt
         - echo `date +%H-%M-%S` > tmp/time.txt
@@ -223,7 +224,7 @@ index:
         #git clone della repo dell'index ()
         - git config user.name devops
         - git config user.email devops@smartme.io
-        - git clone https://$REPO_USR:$REPO_PWD@git.smartme.io/sergio/smartmeio-package-index.git tmp/index
+        - git clone https://$REPO_USR:$REPO_PWD@git.smartme.io/smartme.io/arancino/ide/smartmeio-package-index.git tmp/index
         - cd tmp/index
         - git checkout dev
         - package_template=`cat template_platform_smartmeio_$CORE_NAME.json`
