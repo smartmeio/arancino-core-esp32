@@ -1,11 +1,12 @@
+#include "sdkconfig.h"
+#ifdef CONFIG_ESP_RMAKER_WORK_QUEUE_TASK_STACK
 #include "RMaker.h"
-#if ESP_IDF_VERSION_MAJOR >= 4 && CONFIG_ESP_RMAKER_TASK_STACK && CONFIG_IDF_TARGET_ESP32
 #include <esp_rmaker_schedule.h>
 #include <esp_rmaker_utils.h>
 bool wifiLowLevelInit(bool persistent);
 static esp_err_t err;
 
-static void event_handler(void *arg, esp_event_base_t event_base, int event_id, void *event_data)
+static void event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data)
 {
     if (event_base == RMAKER_EVENT) {
         switch (event_id) {
@@ -49,7 +50,7 @@ Node RMakerClass::initNode(const char *name, const char *type)
 
 esp_err_t RMakerClass::start()
 {
-    err = esp_rmaker_start();    
+    err = esp_rmaker_start();
     if(err != ESP_OK){
         log_e("ESP RainMaker core task failed");
     }
@@ -105,6 +106,7 @@ esp_err_t RMakerClass::enableOTA(ota_type_t type, const char *cert)
 {
     esp_rmaker_ota_config_t ota_config;
     ota_config.server_cert = cert;
+    ota_config.ota_cb = NULL;
     err = esp_rmaker_ota_enable(&ota_config, type);
     if(err != ESP_OK) {
         log_e("OTA enable failed");

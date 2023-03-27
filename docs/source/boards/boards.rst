@@ -8,7 +8,7 @@ Development Boards
 You will need a development board or a custom board with the ESP32 (see Supported SoC's) to start playing.
 There is a bunch of different types and models widely available on the Internet. You need to choose one that covers all your requirements.
 
-To help you on this selection, we point out some facts about choosing the proper boardsto help you to save money and time.
+To help you on this selection, we point out some facts about choosing the proper boards to help you to save money and time.
 
 **One ESP32 to rule them all!**
 
@@ -98,18 +98,13 @@ Generic Vendor
     .. note::
         Create one file per board or one file with multiple boards. Do not add board information/description on this file.
 
+.. include:: ../common/datasheet.inc
+
 Resources
 ---------
 
-* `ESP32 Datasheet`_ (Datasheet)
-* `ESP32-S2 Datasheet`_ (Datasheet)
-* `ESP32-C3 Datasheet`_ (Datasheet)
-
 .. _Espressif Systems: https://www.espressif.com 
 .. _Espressif Product Selector: https://products.espressif.com/
-.. _ESP32 Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
-.. _ESP32-S2 Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32-s2_datasheet_en.pdf
-.. _ESP32-C3 Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf
 
 .. |board_lolin_d32| raw:: html
 

@@ -194,7 +194,8 @@
 //We define the heap to span all of the non-statically-allocated shared RAM. ToDo: Make sure there
 //is some space left for the app and main cpu when running outside of a thread.
 #define configAPPLICATION_ALLOCATED_HEAP                1
-#define configTOTAL_HEAP_SIZE                           (&_heap_end - &_heap_start)//( ( size_t ) (64 * 1024) )
+//#define configTOTAL_HEAP_SIZE                           (&_heap_end - &_heap_start)//( ( size_t ) (64 * 1024) )
+#define configTOTAL_HEAP_SIZE                           ( ( size_t ) (64 * 1024) )
 
 #define configMAX_TASK_NAME_LEN                         ( CONFIG_FREERTOS_MAX_TASK_NAME_LEN )
 
@@ -250,8 +251,12 @@
 #define INCLUDE_pcTaskGetTaskName                       1
 #define INCLUDE_xTaskGetIdleTaskHandle                  1
 #define INCLUDE_pxTaskGetStackStart                     1
-
+#define INCLUDE_eTaskGetState                           1
+#define INCLUDE_xTaskAbortDelay                         1
+#define INCLUDE_xTaskGetHandle                          1
 #define INCLUDE_xSemaphoreGetMutexHolder                1
+#define INCLUDE_xTimerPendFunctionCall                  1
+#define INCLUDE_xTimerGetTimerDaemonTaskHandle          0   //Currently there is no need for this API
 
 /* The priority at which the tick interrupt runs.  This should probably be
    kept at 1. */
@@ -278,8 +283,6 @@ extern void vPortCleanUpTCB ( void *pxTCB );
 #define configTIMER_QUEUE_LENGTH                        CONFIG_FREERTOS_TIMER_QUEUE_LENGTH
 #define configTIMER_TASK_STACK_DEPTH                    CONFIG_FREERTOS_TIMER_TASK_STACK_DEPTH
 
-#define INCLUDE_xTimerPendFunctionCall                  1
-#define INCLUDE_eTaskGetState                           1
 #define configUSE_QUEUE_SETS                            1
 
 #define configUSE_TICKLESS_IDLE                         CONFIG_FREERTOS_USE_TICKLESS_IDLE
