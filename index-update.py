@@ -1,6 +1,7 @@
 import json
 
 #Caricamento sezione da inserire ottenuta dal file creato tramite il bash
+
 def loadNewSection():
     f = open('../platform_index.json')
     json_file = json.load(f)
@@ -19,7 +20,10 @@ def InsertSection(section):
     
     #Ciclo che ricerca la lista degli elementi corrispondenti alla architettura da inserire e successivamente inserisce come ultimo della lista la sezione ottenuta in precedenza
     while sent != 2:
-        if sent == 0 and index_json['packages'][0]["platforms"][i]["architecture"] == section["architecture"]:
+        if i >= len(index_json['packages'][0]["platforms"])-1:
+            index_json['packages'][0]["platforms"].append(section)
+            sent = 2            
+        elif sent == 0 and index_json['packages'][0]["platforms"][i]["architecture"] == section["architecture"]:
             sent = 1
         elif sent == 1 and index_json['packages'][0]["platforms"][i]["architecture"] != section["architecture"]:
             index_json['packages'][0]["platforms"].insert(i, section)
